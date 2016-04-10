@@ -1,0 +1,12 @@
+[submodule "TrumpMining"]
+	path = TrumpMining
+	url = https://github.com/SIRHAMY/twitter-miner.git
+[submodule "ClintonMining"]
+	path = ClintonMining
+	url = https://github.com/SIRHAMY/twitter-miner.git
+[submodule "SandersMining"]
+	path = SandersMining
+	url = https://github.com/SIRHAMY/twitter-miner.git
+[submodule "CruzMining"]
+	path = CruzMining
+	url = https://github.com/SIRHAMY/twitter-miner.git
