@@ -1,0 +1,58 @@
+.wf-loading {
+  visibility: hidden !important;
+}
+
+body {
+	background-color: #f7f7f7;
+}
+
+html {
+	font-family: 'futura-pt', serif !important;
+	line-height: 1.45em !important;
+}
+
+.light {
+	width: 100%;
+	background-color: #ffffff;
+	border-top: 1px solid #e0e0e0;
+	border-bottom: 1px solid #e0e0e0;
+	margin-top: 4em !important;
+	margin-bottom: 4em !important;
+	padding-top: 4em !important;
+	padding-bottom: 4em !important;
+}
+
+.project-section {
+	margin-top: 4em !important;
+}
+
+.links-section {
+	margin-bottom: 4em !important;
+}
+
+.ui.progress .bar {
+	min-width: 0 !important;
+}
+
+.ui.huge.header {
+	font-size: 3em;
+	font-weight: 500;
+	margin-top: 1em !important;
+	margin-bottom: 1em !important;
+	text-align: center;
+}
+
+
+.ui.progress > .label {
+	color: rgba(0, 0, 0, 0.87) !important;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.center {
+	text-align: center !important;
+}
+
+.massive {
+	width: 75%;
+	margin: 1em 12.5%;
+}
