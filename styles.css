@@ -22,12 +22,21 @@ html {
 	padding-bottom: 4em !important;
 }
 
+.candidates {
+	margin-top: 0em !important;
+}
+
 .project-section {
 	margin-top: 4em !important;
 }
 
 .links-section {
 	margin-bottom: 4em !important;
+}
+
+.ui.progress {
+	margin-top: 3px !important;
+	margin-bottom: 0 !important;
 }
 
 .ui.progress .bar {
@@ -37,7 +46,6 @@ html {
 .ui.huge.header {
 	font-size: 3em;
 	font-weight: 500;
-	margin-top: 1em !important;
 	margin-bottom: 1em !important;
 	text-align: center;
 }
@@ -55,4 +63,24 @@ html {
 .massive {
 	width: 75%;
 	margin: 1em 12.5%;
+}
+
+.top {
+	margin-top: 8em;
+}
+
+.ui.secondary.pointing.menu {
+	border-bottom: none;
+}
+
+.ui.secondary.pointing.menu .item {
+	margin: 0;
+}
+
+.ui.grid {
+	margin-bottom: -2rem;
+}
+
+.stats {
+	margin-top: 2em !important;
 }

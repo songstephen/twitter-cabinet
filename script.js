@@ -3,6 +3,14 @@ $.urlParam = function(name){
     return results[1] || 0;
 }
 
-var topic = decodeURIComponent($.urlParam('topic'));
+console.log($.urlParam('topic'));
+
+var topic = decodeURIComponent($.urlParam('topic').replace(/\+/g, '%20'));
 
 console.log(topic);
+
+$(".topic").html(topic);
+
+$('.menu .item').tab('change tab', 'sanders');
+
+$('.ui.dropdown').dropdown();
