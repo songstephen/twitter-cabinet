@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>Twitter Cabinet</title>
+  <link rel="stylesheet" type="text/css" href="semantic.css">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+  <div class="ui container">
+    <div class="ui huge header">Twitter Cabinet
+      <div class="sub header">How the 2016 Presidential Candidates' Twitter followers feel about national issues</div>
+      <div class="sub header">By <a href="http://sirhamy.com" target="_blank">Hamilton Greene</a> and <a href="http://stephensong.com" target="_blank">Stephen Song</a></div>
+    </div>
+
+    <div class="ui four column grid">
+      <div class="column">
+        <a href="https://twitter.com/BernieSanders" target="_blank"><img class="ui image" src="https://pbs.twimg.com/profile_images/706853261022773248/H2nn7Wy0_400x400.jpg"></a>
+        <h2 class="ui center header">Bernie Sanders</h2>
+        <p class="ui center"><a href="https://twitter.com/BernieSanders" target="_blank">@BernieSanders</a><br>1.96M Followers</p>
+      </div>
+      <div class="column">
+        <a href="https://twitter.com/HillaryClinton" target="_blank"><img class="ui image" src="https://pbs.twimg.com/profile_images/705242833637265408/I4RZo3K4_400x400.jpg"></a>
+        <h2 class="ui center header">Hillary Clinton</h2>
+        <p class="ui center"><a href="https://twitter.com/HillaryClinton" target="_blank">@HillaryClinton</a><br>5.95M Followers</p>
+      </div>
+      <div class="column">
+        <a href="https://twitter.com/realDonaldTrump" target="_blank"><img class="ui image" src="https://pbs.twimg.com/profile_images/1980294624/DJT_Headshot_V2_400x400.jpg"></a>
+        <h2 class="ui center header">Donald J. Trump</h2>
+        <p class="ui center"><a href="https://twitter.com/realDonaldTrump" target="_blank">@realDonaldTrump</a><br>7.6M Followers</p>
+      </div>
+      <div class="column">
+        <a href="https://twitter.com/tedcruz" target="_blank"><img class="ui image" src="https://pbs.twimg.com/profile_images/478888071518093312/Rdiy3UhY_400x400.jpeg"></a>
+        <h2 class="ui center header">Ted Cruz</h2>
+        <p class="ui center"><a href="https://twitter.com/tedcruz" target="_blank">@tedcruz</a><br>1.05M Followers</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="light">
+    <div class="ui container">
+    <h2 class="center">Explore a Topic</h2>
+    <form class="ui massive icon input" action="result.html?topic=2525">
+      <input type="text" placeholder="e.g. College Tuition" id="topic" name="topic">
+      <i class="search icon"></i>
+    </form>
+    <h3 class="center">Example Topics</h3>
+      <div class="ui four column grid">
+        <div class="column">
+          <div class="ui link list">
+            <a class="item" href="result.html?topic=Afghanistan">Afghanistan</a>
+            <a class="item" href="result.html?topic=Financial Regulation">Financial Regulation</a>
+            <a class="item" href="result.html?topic=Obama Economic Policy">Obama Economic Policy</a>
+            <a class="item" href="result.html?topic=Internet">Internet</a>
+            <a class="item" href="result.html?topic=Debt Ceiling">Debt Ceiling</a>
+            <a class="item" href="result.html?topic=Medicare">Medicare</a>
+          </div>
+        </div>
+        <div class="column">
+          <div class="ui link list">
+            <a class="item" href="result.html?topic=Foreign Intervention">Foreign Intervention</a>
+            <a class="item" href="result.html?topic=Stem Cell Research">Stem Cell Research</a>
+            <a class="item" href="result.html?topic=Evolution">Evolution</a>
+            <a class="item" href="result.html?topic=Education Funding">Education Funding</a>
+            <a class="item" href="result.html?topic=Gun Background Checks">Gun Background Checks</a>
+            <a class="item" href="result.html?topic=Equal Pay">Equal Pay</a>
+          </div>
+        </div><div class="column">
+        <div class="ui link list">
+          <a class="item" href="result.html?topic=Welfare">Welfare</a>
+          <a class="item" href="result.html?topic=Welfare Drug Checks">Welfare Drug Checks</a>
+          <a class="item" href="result.html?topic=Abortion">Abortion</a>
+          <a class="item" href="result.html?topic=Gun Control">Gun Control</a>
+          <a class="item" href="result.html?topic=Obamacare">Obamacare</a>
+          <a class="item" href="result.html?topic=Gay Marriage">Gay Marriage</a>
+        </div>
+      </div><div class="column">
+      <div class="ui link list">
+        <a class="item" href="result.html?topic='Planned Parenthood'">Planned Parenthood</a>
+        <a class="item" href="result.html?topic='Immigration Healthcare'">Immigration Healthcare</a>
+        <a class="item" href="result.html?topic='Muslim Immigrants'">Muslim Immigrants</a>
+        <a class="item" href="result.html?topic='Voter Fraud'">Voter Fraud</a>
+        <a class="item" href="result.html?topic='Global Warming'">Global Warming</a>
+        <a class="item" href="result.html?topic='Syrian Refuges'">Syrian Refuges</a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="ui text container project-section">
+  <h3 class="ui horizontal divider">About Twitter Cabinet</h3>
+  <p>My project seeks to analyze how American journalism's tone changed before and after the United States was involved in World War I. By identifying the most positive and least positive topics written about in newspapers, we can evaluate the sentiment of American media and hypothesize what journalism could have been trying to do during periods of war.</p>
+
+  <p>I used Chronicling America's API to glean information from news articles between the years 1914 and 1918. For this analysis, I used the front pages of 500 articles that come up when you search for the term "war" on the website. I chose to use the front pages of these articles because headlines and cover stories are often indicative of the tone set in the rest of the issue. Additionally, OCR digitization is typically better on the front pages due to the size of text that's printed.</p>
+
+  <p>This work was done as part of a class assignment for Georgia Tech's CS4464/6465 Fall 2016 (<a href="https://github.com/jacobeisenstein/gt-compj-class/" target="_blank">https://github.com/jacobeisenstein/gt-compj-class/</a>). The opinions expressed here, if any, are solely those of the students working on this assignment and not of the Instructor or Georgia Tech.</p>
+  <div class="project-section links-section">
+    <h3 class="ui horizontal divider">Links</h3>
+    <p><a href="https://www.npmjs.com/package/speakeasy-nlp" target="_blank">Sentiment Analysis from Speakeasy</a></p>
+    <p><a href="https://www.npmjs.com/package/lda" target="_blank">LDA</a></p>
+    <p><a href="http://chroniclingamerica.loc.gov/" target="_blank">Chronicling America API</a></p>
+  </div>
+</div>
+
+<script src="https://use.typekit.net/yov8upt.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
+<script src="jquery-2.1.4.min.js"></script>
+<script src="semantic.js"></script>
+</body>
+</html>
