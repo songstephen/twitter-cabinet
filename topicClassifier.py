@@ -45,7 +45,34 @@ topicSet = [
 	('Should Muslim immigrants be banned from entering the country until the government \
 		improves its ability to screen', 'Muslim Immigrants'),
 	('Should the government increase environmental regulations to prevent global warming?',
-		'Global Warming')
+		'Global Warming'),
+	('Should the U.S. accept refugees from Syria?', 'Syrian Refugees'),
+	('Should a photo ID be required to vote?', 'Voter Fraud'),
+	('Should a business be able to deny service to a customer if the request conflicts \
+		with the owners religious beliefs?', 'Religious Freedom Act'),
+	('Should the government raise the federal minimum wage?', 'Minimum Wage'),
+	('Should foreign terrorism suspects be given constitutional rights?', 'Terrorism'),
+	('Should there be term limits set for members of Congress?', 'Term Limits'),
+	('Should the government decrease military spending?', 'Military Spending'),
+	('Should Apple unlock the iPhones of suspected terrorists for the FBI?', 'iPhone Encryption'),
+	('Should national parks be preserved and protected by the federal government?', 'National Parks'),
+	('Should illegal immigrants be offered in-state tuition rates at public colleges within their \
+		residing state?', 'In-State Tuition'),
+	('Should local police increase surveillance and patrol of Muslim neighborhoods?', 'Muslim Surveillance'),
+	('Should victims of gun violence be allowed to sui firearms dealers and manufacturers?',
+		'Gun Liability'),
+	('Do you support increasing taxes for the rich in order to reduce interest rates for \
+		student loans?', 'Student Loans'),
+	('Should the U.S. increase restrictions on its current border security policy?', 'Border Security'),
+	('Should the federal government require children to be vaccinated fro preventable \
+		diseases?', 'Mandatory Vaccinations'),
+	('Should the military be allowed to use enhanced interrogation techniques such as waterboarding',
+		'Torture'),
+	('Should immigrants be required to learn English?', 'Immigrant Assimilation'),
+	('Should businesses be required to provide paid leave for full-time employees during the birth of a child',
+		'Paid Sick Leave'),
+	('Should corporations and unions Super PACs be allowed to donate to political candidates?',
+		'Campaign Finance')
 
 ]
 
@@ -149,7 +176,7 @@ if __name__ == "__main__":
 					print(str(err))
 			else:
 				tweetsProcessed+=1
-				if(tweetsProcessed % 200 == 0):
+				if(tweetsProcessed % 1000 == 0):
 					print(str(tweetsProcessed) + " tweets processed")
 
 
