@@ -93,16 +93,16 @@
 
 <div class="ui text container project-section">
   <h3 class="ui horizontal divider">About Twitter Cabinet</h3>
-  <p>My project seeks to analyze how American journalism's tone changed before and after the United States was involved in World War I. By identifying the most positive and least positive topics written about in newspapers, we can evaluate the sentiment of American media and hypothesize what journalism could have been trying to do during periods of war.</p>
+  <p>Twitter Cabinet gathers data on the Twitter followers of the presidential candidates Bernie Sanders, Donald Trump, Hillary Clinton, and Ted Cruz in order to determine how they feel about key political issues relevant to the presidential race. By doing this, we hope to attain a representative sample of each network’s ideas and political leanings.</p>
+
+  <p>First, the app scrapes the most recent tweets from each of the candidates’ followers. These tweets are then tagged with topics that are related to election. Once the tweets have been sorted by topics, the app runs the tweets through a sentiment analysis engine. With this data, we provide to a nice visualization allowing you to explore the different topic areas and easily compare the sentiment of each candidate’s followers.</p>
 
   <p>I used Chronicling America's API to glean information from news articles between the years 1914 and 1918. For this analysis, I used the front pages of 500 articles that come up when you search for the term "war" on the website. I chose to use the front pages of these articles because headlines and cover stories are often indicative of the tone set in the rest of the issue. Additionally, OCR digitization is typically better on the front pages due to the size of text that's printed.</p>
 
   <p>This work was done as part of a class assignment for Georgia Tech's CS4464/6465 Fall 2016 (<a href="https://github.com/jacobeisenstein/gt-compj-class/" target="_blank">https://github.com/jacobeisenstein/gt-compj-class/</a>). The opinions expressed here, if any, are solely those of the students working on this assignment and not of the Instructor or Georgia Tech.</p>
   <div class="project-section links-section">
     <h3 class="ui horizontal divider">Links</h3>
-    <p><a href="https://www.npmjs.com/package/speakeasy-nlp" target="_blank">Sentiment Analysis from Speakeasy</a></p>
-    <p><a href="https://www.npmjs.com/package/lda" target="_blank">LDA</a></p>
-    <p><a href="http://chroniclingamerica.loc.gov/" target="_blank">Chronicling America API</a></p>
+    <p><a href="https://github.com/cjhutto/vaderSentiment" target="_blank">Sentiment Analysis from vaderSentiment</a></p>
   </div>
 </div>
 
