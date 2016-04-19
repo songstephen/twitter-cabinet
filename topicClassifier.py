@@ -124,7 +124,6 @@ if __name__ == "__main__":
 	else:
 		feeds = CSVFetcher(filetype[0])
 
-	#HAMY: Add JSON Writer
 	writer = None
 	writeType = None
 	if(args.write):
@@ -145,6 +144,7 @@ if __name__ == "__main__":
 
 	topicClassifier = NaiveBayesClassifier(topicSet)
 
+	#HAMY: Probably broken on CSV inputs
 	for feed in feeds.fetch():
 		feedID = feed['twitterID']
 		feedsProcessed += 1
@@ -192,6 +192,7 @@ if __name__ == "__main__":
 
 
 	#Clean up after everything
+	outfile.close()
 	print("Operation finished")
 
 	timeEnd = timeit.default_timer()
