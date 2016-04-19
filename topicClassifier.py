@@ -194,6 +194,8 @@ if __name__ == "__main__":
 	#Clean up after everything
 	outfile.close()
 	print("Operation finished")
+	print("Input File: " + args.filename)
+	print("Output File: " + args.write)
 
 	timeEnd = timeit.default_timer()
 	print("Elapsed Time: " + repr(timeEnd - timeStart) + "s")
