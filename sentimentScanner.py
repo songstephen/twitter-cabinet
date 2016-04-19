@@ -76,7 +76,10 @@ if __name__ == "__main__":
 	for record in srcText.fetch():
 		try:
 			textSentiment = vaderSentiment(str(record['text']))
-			record['sentiment'] = str(textSentiment)
+			sentEntry = {"neg": textSentiment['neg'], "neu": textSentiment['neu'],
+						"pos": textSentiment['pos'], "compound": textSentiment['compound'] }
+			#sentOut = json.dumps(sentEntry, separators=(',',':'))
+			record['sentiment'] = sentEntry
 
 			if(args.write):
 				if(writeType == 'csv'):
