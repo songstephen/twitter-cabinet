@@ -105,170 +105,170 @@ $.getJSON("data/BernieSandersSentimentPretty.json", function(data){ // this had 
     
 });
 
-// // clinton
+// clinton
 
-// $.getJSON("data/HillaryClintonSentimentPretty.json", function(data){ // this had to be cleaned
+$.getJSON("data/HillaryClintonSentimentPretty.json", function(data){ // this had to be cleaned
 
-//     var clinton_tweets = [];
-//     var clinton_tweets_neg = [];
-//     var clinton_tweets_neu = [];
-//     var clinton_tweets_pos = [];
-//     var clinton_neg = 0;
-//     var clinton_neu = 0;
-//     var clinton_pos = 0;
+    var clinton_tweets = [];
+    var clinton_tweets_neg = [];
+    var clinton_tweets_neu = [];
+    var clinton_tweets_pos = [];
+    var clinton_neg = 0;
+    var clinton_neu = 0;
+    var clinton_pos = 0;
 
-//     for (var i = 0; i < data.collection.length; i++) {
-//         tweet = data.collection[i];
-//         if (tweet.topic == topic) {
-//             clinton_tweets.push(tweet);
-//             clinton_tweets_neg.push(tweet);
-//             clinton_tweets_neu.push(tweet);
-//             clinton_tweets_pos.push(tweet);
-//             clinton_neg += tweet.sentiment['neg'];
-//             clinton_neu += tweet.sentiment['neu'];
-//             clinton_pos += tweet.sentiment['pos'];
-//             $("#clinton-num").html("Analyzed " + clinton_tweets.length + " tweets from Clinton's followers");
-//         }
-//     }
+    for (var i = 0; i < data.collection.length; i++) {
+        tweet = data.collection[i];
+        if (tweet.topic == topic) {
+            clinton_tweets.push(tweet);
+            clinton_tweets_neg.push(tweet);
+            clinton_tweets_neu.push(tweet);
+            clinton_tweets_pos.push(tweet);
+            clinton_neg += tweet.sentiment['neg'];
+            clinton_neu += tweet.sentiment['neu'];
+            clinton_pos += tweet.sentiment['pos'];
+            $("#clinton-num").html("Analyzed " + clinton_tweets.length + " tweets from Clinton's followers");
+        }
+    }
 
-//     clinton_neg /= clinton_tweets.length;
-//     clinton_neu /= clinton_tweets.length;
-//     clinton_pos /= clinton_tweets.length;
-//     clinton_neg_sorted = clinton_tweets_neg.sort(function(a, b){return b.sentiment.neg-a.sentiment.neg});
-//     clinton_neu_sorted = clinton_tweets_neu.sort(function(a, b){return b.sentiment.neu-a.sentiment.neu});
-//     clinton_pos_sorted = clinton_tweets_pos.sort(function(a, b){return b.sentiment.pos-a.sentiment.pos});
+    clinton_neg /= clinton_tweets.length;
+    clinton_neu /= clinton_tweets.length;
+    clinton_pos /= clinton_tweets.length;
+    clinton_neg_sorted = clinton_tweets_neg.sort(function(a, b){return b.sentiment.neg-a.sentiment.neg});
+    clinton_neu_sorted = clinton_tweets_neu.sort(function(a, b){return b.sentiment.neu-a.sentiment.neu});
+    clinton_pos_sorted = clinton_tweets_pos.sort(function(a, b){return b.sentiment.pos-a.sentiment.pos});
 
-//     $('#clinton-pos-bar').progress({
-//         text: {
-//             active: 'Positive: ' + Math.round(clinton_pos * 10000) / 100
-//         },
-//         percent: clinton_pos * 100
-//     });
-//     $('#clinton-neu-bar').progress({
-//         text: {
-//             active: 'Neutral: ' + Math.round(clinton_neu * 10000) / 100
-//         },
-//         percent: clinton_neu * 100
-//     });
-//     $('#clinton-neg-bar').progress({
-//         text: {
-//             active: 'Negative: ' + Math.round(clinton_neg * 10000) / 100
-//         },
-//         percent: clinton_neg * 100
-//     });
+    $('#clinton-pos-bar').progress({
+        text: {
+            active: 'Positive: ' + Math.round(clinton_pos * 10000) / 100
+        },
+        percent: clinton_pos * 100
+    });
+    $('#clinton-neu-bar').progress({
+        text: {
+            active: 'Neutral: ' + Math.round(clinton_neu * 10000) / 100
+        },
+        percent: clinton_neu * 100
+    });
+    $('#clinton-neg-bar').progress({
+        text: {
+            active: 'Negative: ' + Math.round(clinton_neg * 10000) / 100
+        },
+        percent: clinton_neg * 100
+    });
 
-//     renderTweets('neg', 'clinton');
+    renderTweets('neg', 'clinton');
     
-// });
+});
 
-// // trump
+// trump
 
-// $.getJSON("data/realDonaldTrumpSentimentPretty.json", function(data){ // this had to be cleaned
+$.getJSON("data/realDonaldTrumpSentimentPretty.json", function(data){ // this had to be cleaned
 
-//     var trump_tweets = [];
-//     var trump_tweets_neg = [];
-//     var trump_tweets_neu = [];
-//     var trump_tweets_pos = [];
-//     var trump_neg = 0;
-//     var trump_neu = 0;
-//     var trump_pos = 0;
+    var trump_tweets = [];
+    var trump_tweets_neg = [];
+    var trump_tweets_neu = [];
+    var trump_tweets_pos = [];
+    var trump_neg = 0;
+    var trump_neu = 0;
+    var trump_pos = 0;
 
-//     for (var i = 0; i < data.collection.length; i++) {
-//         tweet = data.collection[i];
-//         if (tweet.topic == topic) {
-//             trump_tweets.push(tweet);
-//             trump_tweets_neg.push(tweet);
-//             trump_tweets_neu.push(tweet);
-//             trump_tweets_pos.push(tweet);
-//             trump_neg += tweet.sentiment['neg'];
-//             trump_neu += tweet.sentiment['neu'];
-//             trump_pos += tweet.sentiment['pos'];
-//             $("#trump-num").html("Analyzed " + trump_tweets.length + " tweets from Trump's followers");
-//         }
-//     }
+    for (var i = 0; i < data.collection.length; i++) {
+        tweet = data.collection[i];
+        if (tweet.topic == topic) {
+            trump_tweets.push(tweet);
+            trump_tweets_neg.push(tweet);
+            trump_tweets_neu.push(tweet);
+            trump_tweets_pos.push(tweet);
+            trump_neg += tweet.sentiment['neg'];
+            trump_neu += tweet.sentiment['neu'];
+            trump_pos += tweet.sentiment['pos'];
+            $("#trump-num").html("Analyzed " + trump_tweets.length + " tweets from Trump's followers");
+        }
+    }
 
-//     trump_neg /= trump_tweets.length;
-//     trump_neu /= trump_tweets.length;
-//     trump_pos /= trump_tweets.length;
-//     trump_neg_sorted = trump_tweets_neg.sort(function(a, b){return b.sentiment.neg-a.sentiment.neg});
-//     trump_neu_sorted = trump_tweets_neu.sort(function(a, b){return b.sentiment.neu-a.sentiment.neu});
-//     trump_pos_sorted = trump_tweets_pos.sort(function(a, b){return b.sentiment.pos-a.sentiment.pos});
+    trump_neg /= trump_tweets.length;
+    trump_neu /= trump_tweets.length;
+    trump_pos /= trump_tweets.length;
+    trump_neg_sorted = trump_tweets_neg.sort(function(a, b){return b.sentiment.neg-a.sentiment.neg});
+    trump_neu_sorted = trump_tweets_neu.sort(function(a, b){return b.sentiment.neu-a.sentiment.neu});
+    trump_pos_sorted = trump_tweets_pos.sort(function(a, b){return b.sentiment.pos-a.sentiment.pos});
 
-//     $('#trump-pos-bar').progress({
-//         text: {
-//             active: 'Positive: ' + Math.round(trump_pos * 10000) / 100
-//         },
-//         percent: trump_pos * 100
-//     });
-//     $('#trump-neu-bar').progress({
-//         text: {
-//             active: 'Neutral: ' + Math.round(trump_neu * 10000) / 100
-//         },
-//         percent: trump_neu * 100
-//     });
-//     $('#trump-neg-bar').progress({
-//         text: {
-//             active: 'Negative: ' + Math.round(trump_neg * 10000) / 100
-//         },
-//         percent: trump_neg * 100
-//     });
+    $('#trump-pos-bar').progress({
+        text: {
+            active: 'Positive: ' + Math.round(trump_pos * 10000) / 100
+        },
+        percent: trump_pos * 100
+    });
+    $('#trump-neu-bar').progress({
+        text: {
+            active: 'Neutral: ' + Math.round(trump_neu * 10000) / 100
+        },
+        percent: trump_neu * 100
+    });
+    $('#trump-neg-bar').progress({
+        text: {
+            active: 'Negative: ' + Math.round(trump_neg * 10000) / 100
+        },
+        percent: trump_neg * 100
+    });
 
-//     renderTweets('neg', 'trump');
+    renderTweets('neg', 'trump');
     
-// });
+});
 
-// // cruz
+// cruz
 
-// $.getJSON("data/tedcruzSentimentPretty.json", function(data){ // this had to be cleaned
+$.getJSON("data/tedcruzSentimentPretty.json", function(data){ // this had to be cleaned
 
-//     var cruz_tweets = [];
-//     var cruz_tweets_neg = [];
-//     var cruz_tweets_neu = [];
-//     var cruz_tweets_pos = [];
-//     var cruz_neg = 0;
-//     var cruz_neu = 0;
-//     var cruz_pos = 0;
+    var cruz_tweets = [];
+    var cruz_tweets_neg = [];
+    var cruz_tweets_neu = [];
+    var cruz_tweets_pos = [];
+    var cruz_neg = 0;
+    var cruz_neu = 0;
+    var cruz_pos = 0;
 
-//     for (var i = 0; i < data.collection.length; i++) {
-//         tweet = data.collection[i];
-//         if (tweet.topic == topic) {
-//             cruz_tweets.push(tweet);
-//             cruz_tweets_neg.push(tweet);
-//             cruz_tweets_neu.push(tweet);
-//             cruz_tweets_pos.push(tweet);
-//             cruz_neg += tweet.sentiment['neg'];
-//             cruz_neu += tweet.sentiment['neu'];
-//             cruz_pos += tweet.sentiment['pos'];
-//             $("#cruz-num").html("Analyzed " + cruz_tweets.length + " tweets from Cruz's followers");
-//         }
-//     }
+    for (var i = 0; i < data.collection.length; i++) {
+        tweet = data.collection[i];
+        if (tweet.topic == topic) {
+            cruz_tweets.push(tweet);
+            cruz_tweets_neg.push(tweet);
+            cruz_tweets_neu.push(tweet);
+            cruz_tweets_pos.push(tweet);
+            cruz_neg += tweet.sentiment['neg'];
+            cruz_neu += tweet.sentiment['neu'];
+            cruz_pos += tweet.sentiment['pos'];
+            $("#cruz-num").html("Analyzed " + cruz_tweets.length + " tweets from Cruz's followers");
+        }
+    }
 
-//     cruz_neg /= cruz_tweets.length;
-//     cruz_neu /= cruz_tweets.length;
-//     cruz_pos /= cruz_tweets.length;
-//     cruz_neg_sorted = cruz_tweets_neg.sort(function(a, b){return b.sentiment.neg-a.sentiment.neg});
-//     cruz_neu_sorted = cruz_tweets_neu.sort(function(a, b){return b.sentiment.neu-a.sentiment.neu});
-//     cruz_pos_sorted = cruz_tweets_pos.sort(function(a, b){return b.sentiment.pos-a.sentiment.pos});
+    cruz_neg /= cruz_tweets.length;
+    cruz_neu /= cruz_tweets.length;
+    cruz_pos /= cruz_tweets.length;
+    cruz_neg_sorted = cruz_tweets_neg.sort(function(a, b){return b.sentiment.neg-a.sentiment.neg});
+    cruz_neu_sorted = cruz_tweets_neu.sort(function(a, b){return b.sentiment.neu-a.sentiment.neu});
+    cruz_pos_sorted = cruz_tweets_pos.sort(function(a, b){return b.sentiment.pos-a.sentiment.pos});
 
-//     $('#cruz-pos-bar').progress({
-//         text: {
-//             active: 'Positive: ' + Math.round(cruz_pos * 10000) / 100
-//         },
-//         percent: cruz_pos * 100
-//     });
-//     $('#cruz-neu-bar').progress({
-//         text: {
-//             active: 'Neutral: ' + Math.round(cruz_neu * 10000) / 100
-//         },
-//         percent: cruz_neu * 100
-//     });
-//     $('#cruz-neg-bar').progress({
-//         text: {
-//             active: 'Negative: ' + Math.round(cruz_neg * 10000) / 100
-//         },
-//         percent: cruz_neg * 100
-//     });
+    $('#cruz-pos-bar').progress({
+        text: {
+            active: 'Positive: ' + Math.round(cruz_pos * 10000) / 100
+        },
+        percent: cruz_pos * 100
+    });
+    $('#cruz-neu-bar').progress({
+        text: {
+            active: 'Neutral: ' + Math.round(cruz_neu * 10000) / 100
+        },
+        percent: cruz_neu * 100
+    });
+    $('#cruz-neg-bar').progress({
+        text: {
+            active: 'Negative: ' + Math.round(cruz_neg * 10000) / 100
+        },
+        percent: cruz_neg * 100
+    });
 
-//     renderTweets('neg', 'cruz');
+    renderTweets('neg', 'cruz');
     
-// });
+});
