@@ -39,6 +39,7 @@ if __name__ == "__main__":
 		formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 	parser.add_argument('filename', help="Data Input file w/ filetype ending")
 	parser.add_argument('-w', '--write', type=str, help="Write to filename")
+	parser.add_argument('-p', '--pretty', const="pretty", nargs='?', help="Properly format output JSON")
 
 	args = parser.parse_args()
 
@@ -60,6 +61,8 @@ if __name__ == "__main__":
 		if(args.write.split('.')[1] == 'json'):
 			outfile = open(args.write, 'wb')
 			writeType = 'json'
+			if(args.pretty): 
+				outfile.write('{ "collection": [ ')
 		else:
 			print "ERROR: CSV writing not implemented"
 			sys.exit("Don't choose CSV")
@@ -87,7 +90,13 @@ if __name__ == "__main__":
 					#	])
 				elif(writeType == 'json'):
 					jsonOut = json.dumps(record)
-					outfile.write(jsonOut + '\n')
+					if(not args.pretty):
+						outfile.write(jsonOut + '\n')
+					else:
+						if(tweetsProcessed > 0):
+							outfile.write(',\n' + jsonOut)
+						else:
+							outfile.write(jsonOut)
 				else:
 					print "ERROR: Unsupported write type"
 			else:
@@ -102,7 +111,10 @@ if __name__ == "__main__":
 			if(tweetsProcessed % 1000 == 0):
 				print(str(tweetsProcessed) + " tweets processed")
 
+	if(args.pretty):
+		outfile.write("] }")
 	outfile.close()
+
 	print("Operation finished")
 	print("Input File: " + args.filename)
 	print("Output File: " + args.write)
