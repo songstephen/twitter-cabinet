@@ -126,14 +126,17 @@ if __name__ == "__main__":
 
 	#HAMY: Add JSON Writer
 	writer = None
+	writeType = None
 	if(args.write):
 		if(args.write.split('.')[1] == 'json'):
-			print "Need to add json writer"
+			outfile = open(args.write, 'wb')
+			writeType = 'json'
 		else:
 			outFile = open(args.write, 'wb')
 			writer = csv.writer(outFile)
 			cols = ["tweetID", "feedID", "topic", "text"]
 			writer.writerow(cols)
+			writeType = 'csv'
 
 	#Begin feed processing
 	feedsProcessed = 0
@@ -159,12 +162,20 @@ if __name__ == "__main__":
 					topicsProcessed[tweetTopic] = 1
 
 				if(args.write):
-					writer.writerow([
-							tweetID,
-							feedID,
-							tweetTopic,
-							tweetText
-						])
+					if(writeType == 'csv'):
+						writer.writerow([
+								tweetID,
+								feedID,
+								tweetTopic,
+								tweetText
+							])
+					elif(writeType == 'json'):
+						toWrite = {"tweetID": tweetID, "feedID": feedID,
+									"topic": tweetTopic, "text": tweetText}
+						jsonOut = json.dumps(toWrite, separators=(',',':'))
+						outfile.write(jsonOut + '\n')
+					else:
+						print "ERROR: Unsupported write type"
 				else:
 					print("TweetID:" + tweetID)
 					print("FeedID: " + feedID)
