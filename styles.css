@@ -70,6 +70,15 @@ html {
 	margin-top: 8em;
 }
 
+.ui.fixed.menu, .ui[class*="top fixed"].menu {
+    border-top: none;
+    top: 0px;
+    left: 0px;
+    right: auto;
+    bottom: auto;
+    z-index: 99999999999;
+}
+
 .ui.secondary.pointing.menu {
 	border-bottom: none;
 }
@@ -93,4 +102,8 @@ html {
 #tweet iframe {
   border: none !important;
   box-shadow: none !important;
+}
+
+.hidden {
+	display: none !important;
 }
