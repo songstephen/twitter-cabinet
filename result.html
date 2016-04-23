@@ -17,12 +17,12 @@
     <div class="item">
       <h1 id="title">Results for <span class="topic"></span></h1>
     </div>
-    <div class="right item">
+<!--     <div class="right item">
       <form class="ui icon input inline fields" action="result.html?topic= + topic">
         <input type="text" placeholder="Search another topic" id="topic" name="topic">
         <i class="search icon"></i>
       </form>
-    </div>
+    </div> -->
   </div>
 
   <div class="ui container top">
@@ -36,18 +36,18 @@
             <div class="content">
               <span class="header">Bernie Sanders</span>
               <div class="meta">
-                <span id="sanders-num">Analyzing tweets...</span>
+                <span id="sanders-num"><div class="ui active small inline loader"></div> Analyzing tweets...</span>
               </div>
             </div>
           </div>
           <div class="item">
             <div class="ui tiny image">
-              <img src="https://pbs.twimg.com/profile_images/705242833637265408/I4RZo3K4_400x400.jpg">
+              <img src="https://pbs.twimg.com/profile_images/723489042420097024/BAsl5SPE_400x400.jpg">
             </div>
             <div class="content">
               <span class="header">Hillary Clinton</span>
               <div class="meta">
-                <span id="clinton-num">Analyzing tweets...</span>
+                <span id="clinton-num"><div class="ui active small inline loader"></div> Analyzing tweets...</span>
               </div>
             </div>
           </div>
@@ -62,7 +62,7 @@
             <div class="content">
               <span class="header">Donald J. Trump</span>
               <div class="meta">
-                <span id="trump-num">Analyzing tweets...</span>
+                <span id="trump-num"><div class="ui active small inline loader"></div> Analyzing tweets...</span>
               </div>
             </div>
           </div>
@@ -73,7 +73,7 @@
             <div class="content">
               <span class="header">Ted Cruz</span>
               <div class="meta">
-                <span id="cruz-num">Analyzing tweets...</span>
+                <span id="cruz-num"><div class="ui active small inline loader"></div> Analyzing tweets...</span>
               </div>
             </div>
           </div>
@@ -91,167 +91,182 @@
 
   <div class="light candidates">
     <div class="ui container">
-
       <div class="ui tab" data-tab="sanders">
-        <h2 class="ui header">How Sanders's followers feel about <span class="topic"></span>
-          <div class="sub header">Scores reflect the overall tone of this candidate's Twitter followers</div>
+        <h2 class="ui centered header" id="sanders-loader"><div class="ui active small inline loader"></div> Analyzing tweets...</h2>
         </h2>
-        <div class="ui three column grid stats">
-          <div class="column">
-            <div class="ui small progress green success" id="sanders-pos-bar">
-              <div class="bar"></div>
-              <div class="label">Positive: 100</div>
+        <div class="hidden" id="sanders-content">
+          <h2 class="ui header">How Sanders's followers feel about <span class="topic"></span>
+            <div class="sub header">Scores reflect the overall tone of this candidate's Twitter followers</div>
+          </h2>
+          <div class="ui three column grid stats">
+            <div class="column">
+              <div class="ui small progress green success" id="sanders-pos-bar">
+                <div class="bar"></div>
+                <div class="label">Positive: 100</div>
+              </div>
+            </div>
+            <div class="column">
+              <div class="ui small progress" id="sanders-neu-bar">
+                <div class="bar"></div>
+                <div class="label">Neutral: 100</div>
+              </div>
+            </div>
+            <div class="column">
+              <div class="ui small progress red error" id="sanders-neg-bar">
+                <div class="bar"></div>
+                <div class="label">Negative: 100</div>
+              </div>
             </div>
           </div>
-          <div class="column">
-            <div class="ui small progress" id="sanders-neu-bar">
-              <div class="bar"></div>
-              <div class="label">Neutral: 100</div>
+          <div class="project-section">
+            <h2 class="ui header">Explore Tweets</h2>
+            <div class="ui selection dropdown">
+              <input type="hidden" name="sanders-sort">
+              <i class="dropdown icon"></i>
+              <div class="text">Most Negative</div>
+              <div class="menu">
+                <div class="item" data-value="sanders-pos">Most Positive</div>
+                <div class="item" data-value="sanders-neu">Most Neutral</div>
+                <div class="item" data-value="sanders-neg">Most Negative</div>
+              </div>
             </div>
-          </div>
-          <div class="column">
-            <div class="ui small progress red error" id="sanders-neg-bar">
-              <div class="bar"></div>
-              <div class="label">Negative: 100</div>
+            <div class="ui two column grid" id="sanders-tweets">
             </div>
-          </div>
-        </div>
-        <div class="project-section">
-          <h2 class="ui header">Explore Tweets</h2>
-          <div class="ui selection dropdown">
-            <input type="hidden" name="sanders-sort">
-            <i class="dropdown icon"></i>
-            <div class="text">Most Negative</div>
-            <div class="menu">
-              <div class="item" data-value="sanders-pos">Most Positive</div>
-              <div class="item" data-value="sanders-neu">Most Neutral</div>
-              <div class="item" data-value="sanders-neg">Most Negative</div>
-            </div>
-          </div>
-          <div class="ui two column grid" id="sanders-tweets">
           </div>
         </div>
       </div>
 
       <div class="ui tab" data-tab="clinton">
-        <h2 class="ui header">How Clinton's followers feel about <span class="topic"></span>
-          <div class="sub header">Scores reflect the overall tone of this candidate's Twitter followers</div>
+        <h2 class="ui centered header" id="clinton-loader"><div class="ui active small inline loader"></div> Analyzing tweets...</h2>
         </h2>
-        <div class="ui three column grid stats">
-          <div class="column">
-            <div class="ui small progress green success" id="clinton-pos-bar">
-              <div class="bar"></div>
-              <div class="label">Positive: 100</div>
+        <div class="hidden" id="clinton-content">
+          <h2 class="ui header">How Clinton's followers feel about <span class="topic"></span>
+            <div class="sub header">Scores reflect the overall tone of this candidate's Twitter followers</div>
+          </h2>
+          <div class="ui three column grid stats">
+            <div class="column">
+              <div class="ui small progress green success" id="clinton-pos-bar">
+                <div class="bar"></div>
+                <div class="label">Positive: 100</div>
+              </div>
+            </div>
+            <div class="column">
+              <div class="ui small progress" id="clinton-neu-bar">
+                <div class="bar"></div>
+                <div class="label">Neutral: 100</div>
+              </div>
+            </div>
+            <div class="column">
+              <div class="ui small progress red error" id="clinton-neg-bar">
+                <div class="bar"></div>
+                <div class="label">Negative: 100</div>
+              </div>
             </div>
           </div>
-          <div class="column">
-            <div class="ui small progress" id="clinton-neu-bar">
-              <div class="bar"></div>
-              <div class="label">Neutral: 100</div>
+          <div class="project-section">
+            <h2 class="ui header">Explore Tweets</h2>
+            <div class="ui selection dropdown">
+              <input type="hidden" name="clinton-sort">
+              <i class="dropdown icon"></i>
+              <div class="text">Most Negative</div>
+              <div class="menu">
+                <div class="item" data-value="clinton-pos">Most Positive</div>
+                <div class="item" data-value="clinton-neu">Most Neutral</div>
+                <div class="item" data-value="clinton-neg">Most Negative</div>
+              </div>
             </div>
-          </div>
-          <div class="column">
-            <div class="ui small progress red error" id="clinton-neg-bar">
-              <div class="bar"></div>
-              <div class="label">Negative: 100</div>
+            <div class="ui two column grid" id="clinton-tweets">
             </div>
-          </div>
-        </div>
-        <div class="project-section">
-          <h2 class="ui header">Explore Tweets</h2>
-          <div class="ui selection dropdown">
-            <input type="hidden" name="clinton-sort">
-            <i class="dropdown icon"></i>
-            <div class="text">Most Negative</div>
-            <div class="menu">
-              <div class="item" data-value="clinton-pos">Most Positive</div>
-              <div class="item" data-value="clinton-neu">Most Neutral</div>
-              <div class="item" data-value="clinton-neg">Most Negative</div>
-            </div>
-          </div>
-          <div class="ui two column grid" id="clinton-tweets">
           </div>
         </div>
       </div>
 
       <div class="ui tab" data-tab="trump">
-        <h2 class="ui header">How Trump's followers feel about <span class="topic"></span>
-          <div class="sub header">Scores reflect the overall tone of this candidate's Twitter followers</div>
+        <h2 class="ui centered header" id="trump-loader"><div class="ui active small inline loader"></div> Analyzing tweets...</h2>
         </h2>
-        <div class="ui three column grid stats">
-          <div class="column">
-            <div class="ui small progress green success" id="trump-pos-bar">
-              <div class="bar"></div>
-              <div class="label">Positive: 100</div>
+        <div class="hidden" id="trump-content">
+          <h2 class="ui header">How Trump's followers feel about <span class="topic"></span>
+            <div class="sub header">Scores reflect the overall tone of this candidate's Twitter followers</div>
+          </h2>
+          <div class="ui three column grid stats">
+            <div class="column">
+              <div class="ui small progress green success" id="trump-pos-bar">
+                <div class="bar"></div>
+                <div class="label">Positive: 100</div>
+              </div>
+            </div>
+            <div class="column">
+              <div class="ui small progress" id="trump-neu-bar">
+                <div class="bar"></div>
+                <div class="label">Neutral: 100</div>
+              </div>
+            </div>
+            <div class="column">
+              <div class="ui small progress red error" id="trump-neg-bar">
+                <div class="bar"></div>
+                <div class="label">Negative: 100</div>
+              </div>
             </div>
           </div>
-          <div class="column">
-            <div class="ui small progress" id="trump-neu-bar">
-              <div class="bar"></div>
-              <div class="label">Neutral: 100</div>
+          <div class="project-section">
+            <h2 class="ui header">Explore Tweets</h2>
+            <div class="ui selection dropdown">
+              <input type="hidden" name="trump-sort">
+              <i class="dropdown icon"></i>
+              <div class="text">Most Negative</div>
+              <div class="menu">
+                <div class="item" data-value="trump-pos">Most Positive</div>
+                <div class="item" data-value="trump-neu">Most Neutral</div>
+                <div class="item" data-value="trump-neg">Most Negative</div>
+              </div>
             </div>
-          </div>
-          <div class="column">
-            <div class="ui small progress red error" id="trump-neg-bar">
-              <div class="bar"></div>
-              <div class="label">Negative: 100</div>
+            <div class="ui two column grid" id="trump-tweets">
             </div>
-          </div>
-        </div>
-        <div class="project-section">
-          <h2 class="ui header">Explore Tweets</h2>
-          <div class="ui selection dropdown">
-            <input type="hidden" name="trump-sort">
-            <i class="dropdown icon"></i>
-            <div class="text">Most Negative</div>
-            <div class="menu">
-              <div class="item" data-value="trump-pos">Most Positive</div>
-              <div class="item" data-value="trump-neu">Most Neutral</div>
-              <div class="item" data-value="trump-neg">Most Negative</div>
-            </div>
-          </div>
-          <div class="ui two column grid" id="trump-tweets">
           </div>
         </div>
       </div>
 
       <div class="ui tab" data-tab="cruz">
-        <h2 class="ui header">How Cruz's followers feel about <span class="topic"></span>
-          <div class="sub header">Scores reflect the overall tone of this candidate's Twitter followers</div>
+        <h2 class="ui centered header" id="cruz-loader"><div class="ui active small inline loader"></div> Analyzing tweets...</h2>
         </h2>
-        <div class="ui three column grid stats">
-          <div class="column">
-            <div class="ui small progress green success" id="cruz-pos-bar">
-              <div class="bar"></div>
-              <div class="label">Positive: 100</div>
+        <div class="hidden" id="cruz-content">
+          <h2 class="ui header">How Cruz's followers feel about <span class="topic"></span>
+            <div class="sub header">Scores reflect the overall tone of this candidate's Twitter followers</div>
+          </h2>
+          <div class="ui three column grid stats">
+            <div class="column">
+              <div class="ui small progress green success" id="cruz-pos-bar">
+                <div class="bar"></div>
+                <div class="label">Positive: 100</div>
+              </div>
+            </div>
+            <div class="column">
+              <div class="ui small progress" id="cruz-neu-bar">
+                <div class="bar"></div>
+                <div class="label">Neutral: 100</div>
+              </div>
+            </div>
+            <div class="column">
+              <div class="ui small progress red error" id="cruz-neg-bar">
+                <div class="bar"></div>
+                <div class="label">Negative: 100</div>
+              </div>
             </div>
           </div>
-          <div class="column">
-            <div class="ui small progress" id="cruz-neu-bar">
-              <div class="bar"></div>
-              <div class="label">Neutral: 100</div>
+          <div class="project-section">
+            <h2 class="ui header">Explore Tweets</h2>
+            <div class="ui selection dropdown">
+              <input type="hidden" name="cruz-sort">
+              <i class="dropdown icon"></i>
+              <div class="text">Most Negative</div>
+              <div class="menu">
+                <div class="item" data-value="cruz-pos">Most Positive</div>
+                <div class="item" data-value="cruz-neu">Most Neutral</div>
+                <div class="item" data-value="cruz-neg">Most Negative</div>
+              </div>
             </div>
-          </div>
-          <div class="column">
-            <div class="ui small progress red error" id="cruz-neg-bar">
-              <div class="bar"></div>
-              <div class="label">Negative: 100</div>
+            <div class="ui two column grid" id="cruz-tweets">
             </div>
-          </div>
-        </div>
-        <div class="project-section">
-          <h2 class="ui header">Explore Tweets</h2>
-          <div class="ui selection dropdown">
-            <input type="hidden" name="cruz-sort">
-            <i class="dropdown icon"></i>
-            <div class="text">Most Negative</div>
-            <div class="menu">
-              <div class="item" data-value="cruz-pos">Most Positive</div>
-              <div class="item" data-value="cruz-neu">Most Neutral</div>
-              <div class="item" data-value="cruz-neg">Most Negative</div>
-            </div>
-          </div>
-          <div class="ui two column grid" id="cruz-tweets">
           </div>
         </div>
       </div>

@@ -51,7 +51,7 @@ $('.ui.dropdown').dropdown({
 
 // sanders
 
-$.getJSON("data/BernieSandersSentimentPretty.json", function(data){ // this had to be cleaned
+$.getJSON("data/BernieSandersSentimentPretty.json", function(data){
 
     var sanders_tweets = [];
     var sanders_tweets_neg = [];
@@ -71,43 +71,48 @@ $.getJSON("data/BernieSandersSentimentPretty.json", function(data){ // this had 
             sanders_neg += tweet.sentiment['neg'];
             sanders_neu += tweet.sentiment['neu'];
             sanders_pos += tweet.sentiment['pos'];
-            $("#sanders-num").html("Analyzed " + sanders_tweets.length + " tweets from Sanders's followers");
         }
     }
+    $('#sanders-loader').addClass("hidden");
+    if (sanders_tweets.length) {
+        $('#sanders-content').removeClass("hidden");
+        $("#sanders-num").html("Analyzed " + sanders_tweets.length + " tweets from Sanders's followers");
+        sanders_neg /= sanders_tweets.length;
+        sanders_neu /= sanders_tweets.length;
+        sanders_pos /= sanders_tweets.length;
+        sanders_neg_sorted = sanders_tweets_neg.sort(function(a, b){return b.sentiment.neg-a.sentiment.neg});
+        sanders_neu_sorted = sanders_tweets_neu.sort(function(a, b){return b.sentiment.neu-a.sentiment.neu});
+        sanders_pos_sorted = sanders_tweets_pos.sort(function(a, b){return b.sentiment.pos-a.sentiment.pos});
 
-    sanders_neg /= sanders_tweets.length;
-    sanders_neu /= sanders_tweets.length;
-    sanders_pos /= sanders_tweets.length;
-    sanders_neg_sorted = sanders_tweets_neg.sort(function(a, b){return b.sentiment.neg-a.sentiment.neg});
-    sanders_neu_sorted = sanders_tweets_neu.sort(function(a, b){return b.sentiment.neu-a.sentiment.neu});
-    sanders_pos_sorted = sanders_tweets_pos.sort(function(a, b){return b.sentiment.pos-a.sentiment.pos});
-
-    $('#sanders-pos-bar').progress({
-        text: {
-            active: 'Positive: ' + Math.round(sanders_pos * 10000) / 100
-        },
-        percent: sanders_pos * 100
-    });
-    $('#sanders-neu-bar').progress({
-        text: {
-            active: 'Neutral: ' + Math.round(sanders_neu * 10000) / 100
-        },
-        percent: sanders_neu * 100
-    });
-    $('#sanders-neg-bar').progress({
-        text: {
-            active: 'Negative: ' + Math.round(sanders_neg * 10000) / 100
-        },
-        percent: sanders_neg * 100
-    });
-
-    renderTweets('neg', 'sanders');
+        $('#sanders-pos-bar').progress({
+            text: {
+                active: 'Positive: ' + Math.round(sanders_pos * 10000) / 100
+            },
+            percent: sanders_pos * 100
+        });
+        $('#sanders-neu-bar').progress({
+            text: {
+                active: 'Neutral: ' + Math.round(sanders_neu * 10000) / 100
+            },
+            percent: sanders_neu * 100
+        });
+        $('#sanders-neg-bar').progress({
+            text: {
+                active: 'Negative: ' + Math.round(sanders_neg * 10000) / 100
+            },
+            percent: sanders_neg * 100
+        });
+        renderTweets('neg', 'sanders');
+    } else {
+        $("#sanders-num").html('<i class="warning circle icon"></i> No tweets found');
+        $("div[data-tab='sanders']").html('<h2 class="ui centered header">No tweets found<span class="topic"></span><div class="sub header">There aren\'t any tweets that have been classified in our system for this topic yet.</div></h2>');
+    }
     
 });
 
 // clinton
 
-$.getJSON("data/HillaryClintonSentimentPretty.json", function(data){ // this had to be cleaned
+$.getJSON("data/HillaryClintonSentimentPretty.json", function(data){
 
     var clinton_tweets = [];
     var clinton_tweets_neg = [];
@@ -127,43 +132,49 @@ $.getJSON("data/HillaryClintonSentimentPretty.json", function(data){ // this had
             clinton_neg += tweet.sentiment['neg'];
             clinton_neu += tweet.sentiment['neu'];
             clinton_pos += tweet.sentiment['pos'];
-            $("#clinton-num").html("Analyzed " + clinton_tweets.length + " tweets from Clinton's followers");
         }
     }
+    $('#clinton-loader').addClass("hidden");
+    if (clinton_tweets.length) {
+        $('#clinton-content').removeClass("hidden");
+        $("#clinton-num").html("Analyzed " + clinton_tweets.length + " tweets from Clinton's followers");
+        clinton_neg /= clinton_tweets.length;
+        clinton_neu /= clinton_tweets.length;
+        clinton_pos /= clinton_tweets.length;
+        clinton_neg_sorted = clinton_tweets_neg.sort(function(a, b){return b.sentiment.neg-a.sentiment.neg});
+        clinton_neu_sorted = clinton_tweets_neu.sort(function(a, b){return b.sentiment.neu-a.sentiment.neu});
+        clinton_pos_sorted = clinton_tweets_pos.sort(function(a, b){return b.sentiment.pos-a.sentiment.pos});
 
-    clinton_neg /= clinton_tweets.length;
-    clinton_neu /= clinton_tweets.length;
-    clinton_pos /= clinton_tweets.length;
-    clinton_neg_sorted = clinton_tweets_neg.sort(function(a, b){return b.sentiment.neg-a.sentiment.neg});
-    clinton_neu_sorted = clinton_tweets_neu.sort(function(a, b){return b.sentiment.neu-a.sentiment.neu});
-    clinton_pos_sorted = clinton_tweets_pos.sort(function(a, b){return b.sentiment.pos-a.sentiment.pos});
+        $('#clinton-pos-bar').progress({
+            text: {
+                active: 'Positive: ' + Math.round(clinton_pos * 10000) / 100
+            },
+            percent: clinton_pos * 100
+        });
+        $('#clinton-neu-bar').progress({
+            text: {
+                active: 'Neutral: ' + Math.round(clinton_neu * 10000) / 100
+            },
+            percent: clinton_neu * 100
+        });
+        $('#clinton-neg-bar').progress({
+            text: {
+                active: 'Negative: ' + Math.round(clinton_neg * 10000) / 100
+            },
+            percent: clinton_neg * 100
+        });
 
-    $('#clinton-pos-bar').progress({
-        text: {
-            active: 'Positive: ' + Math.round(clinton_pos * 10000) / 100
-        },
-        percent: clinton_pos * 100
-    });
-    $('#clinton-neu-bar').progress({
-        text: {
-            active: 'Neutral: ' + Math.round(clinton_neu * 10000) / 100
-        },
-        percent: clinton_neu * 100
-    });
-    $('#clinton-neg-bar').progress({
-        text: {
-            active: 'Negative: ' + Math.round(clinton_neg * 10000) / 100
-        },
-        percent: clinton_neg * 100
-    });
-
-    renderTweets('neg', 'clinton');
+        renderTweets('neg', 'clinton');
+    } else {
+        $("#clinton-num").html('<i class="warning circle icon"></i> No tweets found');
+        $("div[data-tab='clinton']").html('<h2 class="ui centered header">No tweets found<span class="topic"></span><div class="sub header">There aren\'t any tweets that have been classified in our system for this topic yet.</div></h2>');
+    }
     
 });
 
 // trump
 
-$.getJSON("data/realDonaldTrumpSentimentPretty.json", function(data){ // this had to be cleaned
+$.getJSON("data/realDonaldTrumpSentimentPretty.json", function(data){
 
     var trump_tweets = [];
     var trump_tweets_neg = [];
@@ -183,43 +194,48 @@ $.getJSON("data/realDonaldTrumpSentimentPretty.json", function(data){ // this ha
             trump_neg += tweet.sentiment['neg'];
             trump_neu += tweet.sentiment['neu'];
             trump_pos += tweet.sentiment['pos'];
-            $("#trump-num").html("Analyzed " + trump_tweets.length + " tweets from Trump's followers");
         }
     }
+    $('#trump-loader').addClass("hidden");
+    if (trump_tweets.length) {
+        $('#trump-content').removeClass("hidden");
+        $("#trump-num").html("Analyzed " + trump_tweets.length + " tweets from Trump's followers");
+        trump_neg /= trump_tweets.length;
+        trump_neu /= trump_tweets.length;
+        trump_pos /= trump_tweets.length;
+        trump_neg_sorted = trump_tweets_neg.sort(function(a, b){return b.sentiment.neg-a.sentiment.neg});
+        trump_neu_sorted = trump_tweets_neu.sort(function(a, b){return b.sentiment.neu-a.sentiment.neu});
+        trump_pos_sorted = trump_tweets_pos.sort(function(a, b){return b.sentiment.pos-a.sentiment.pos});
 
-    trump_neg /= trump_tweets.length;
-    trump_neu /= trump_tweets.length;
-    trump_pos /= trump_tweets.length;
-    trump_neg_sorted = trump_tweets_neg.sort(function(a, b){return b.sentiment.neg-a.sentiment.neg});
-    trump_neu_sorted = trump_tweets_neu.sort(function(a, b){return b.sentiment.neu-a.sentiment.neu});
-    trump_pos_sorted = trump_tweets_pos.sort(function(a, b){return b.sentiment.pos-a.sentiment.pos});
+        $('#trump-pos-bar').progress({
+            text: {
+                active: 'Positive: ' + Math.round(trump_pos * 10000) / 100
+            },
+            percent: trump_pos * 100
+        });
+        $('#trump-neu-bar').progress({
+            text: {
+                active: 'Neutral: ' + Math.round(trump_neu * 10000) / 100
+            },
+            percent: trump_neu * 100
+        });
+        $('#trump-neg-bar').progress({
+            text: {
+                active: 'Negative: ' + Math.round(trump_neg * 10000) / 100
+            },
+            percent: trump_neg * 100
+        });
 
-    $('#trump-pos-bar').progress({
-        text: {
-            active: 'Positive: ' + Math.round(trump_pos * 10000) / 100
-        },
-        percent: trump_pos * 100
-    });
-    $('#trump-neu-bar').progress({
-        text: {
-            active: 'Neutral: ' + Math.round(trump_neu * 10000) / 100
-        },
-        percent: trump_neu * 100
-    });
-    $('#trump-neg-bar').progress({
-        text: {
-            active: 'Negative: ' + Math.round(trump_neg * 10000) / 100
-        },
-        percent: trump_neg * 100
-    });
-
-    renderTweets('neg', 'trump');
-    
+        renderTweets('neg', 'trump');
+    } else {
+        $("#trump-num").html('<i class="warning circle icon"></i> No tweets found');
+        $("div[data-tab='trump']").html('<h2 class="ui centered header">No tweets found<span class="topic"></span><div class="sub header">There aren\'t any tweets that have been classified in our system for this topic yet.</div></h2>');
+    }
 });
 
 // cruz
 
-$.getJSON("data/tedcruzSentimentPretty.json", function(data){ // this had to be cleaned
+$.getJSON("data/tedcruzSentimentPretty.json", function(data){
 
     var cruz_tweets = [];
     var cruz_tweets_neg = [];
@@ -239,36 +255,41 @@ $.getJSON("data/tedcruzSentimentPretty.json", function(data){ // this had to be 
             cruz_neg += tweet.sentiment['neg'];
             cruz_neu += tweet.sentiment['neu'];
             cruz_pos += tweet.sentiment['pos'];
-            $("#cruz-num").html("Analyzed " + cruz_tweets.length + " tweets from Cruz's followers");
         }
     }
+    $('#cruz-loader').addClass("hidden");
+    if (cruz_tweets.length) {
+        $('#cruz-content').removeClass("hidden");
+        $("#cruz-num").html("Analyzed " + cruz_tweets.length + " tweets from Cruz's followers");
+        cruz_neg /= cruz_tweets.length;
+        cruz_neu /= cruz_tweets.length;
+        cruz_pos /= cruz_tweets.length;
+        cruz_neg_sorted = cruz_tweets_neg.sort(function(a, b){return b.sentiment.neg-a.sentiment.neg});
+        cruz_neu_sorted = cruz_tweets_neu.sort(function(a, b){return b.sentiment.neu-a.sentiment.neu});
+        cruz_pos_sorted = cruz_tweets_pos.sort(function(a, b){return b.sentiment.pos-a.sentiment.pos});
 
-    cruz_neg /= cruz_tweets.length;
-    cruz_neu /= cruz_tweets.length;
-    cruz_pos /= cruz_tweets.length;
-    cruz_neg_sorted = cruz_tweets_neg.sort(function(a, b){return b.sentiment.neg-a.sentiment.neg});
-    cruz_neu_sorted = cruz_tweets_neu.sort(function(a, b){return b.sentiment.neu-a.sentiment.neu});
-    cruz_pos_sorted = cruz_tweets_pos.sort(function(a, b){return b.sentiment.pos-a.sentiment.pos});
+        $('#cruz-pos-bar').progress({
+            text: {
+                active: 'Positive: ' + Math.round(cruz_pos * 10000) / 100
+            },
+            percent: cruz_pos * 100
+        });
+        $('#cruz-neu-bar').progress({
+            text: {
+                active: 'Neutral: ' + Math.round(cruz_neu * 10000) / 100
+            },
+            percent: cruz_neu * 100
+        });
+        $('#cruz-neg-bar').progress({
+            text: {
+                active: 'Negative: ' + Math.round(cruz_neg * 10000) / 100
+            },
+            percent: cruz_neg * 100
+        });
 
-    $('#cruz-pos-bar').progress({
-        text: {
-            active: 'Positive: ' + Math.round(cruz_pos * 10000) / 100
-        },
-        percent: cruz_pos * 100
-    });
-    $('#cruz-neu-bar').progress({
-        text: {
-            active: 'Neutral: ' + Math.round(cruz_neu * 10000) / 100
-        },
-        percent: cruz_neu * 100
-    });
-    $('#cruz-neg-bar').progress({
-        text: {
-            active: 'Negative: ' + Math.round(cruz_neg * 10000) / 100
-        },
-        percent: cruz_neg * 100
-    });
-
-    renderTweets('neg', 'cruz');
-    
+        renderTweets('neg', 'cruz');
+    } else {
+        $("#cruz-num").html('<i class="warning circle icon"></i> No tweets found');
+        $("div[data-tab='cruz']").html('<h2 class="ui centered header">No tweets found<span class="topic"></span><div class="sub header">There aren\'t any tweets that have been classified in our system for this topic yet.</div></h2>');
+    }
 });
