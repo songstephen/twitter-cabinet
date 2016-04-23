@@ -187,8 +187,8 @@ if __name__ == "__main__":
 		for tweet in feed['feed']:
 
 			try:
-				tweetID = tweet['id_str']
-				tweetText = tweet['text']
+				tweetID = tweet[1]
+				tweetText = tweet[0]
 
 				if(mode == "naivebayes"):
 					tweetTopic = topicClassifier.classify(tweetText.decode('utf-8'))
