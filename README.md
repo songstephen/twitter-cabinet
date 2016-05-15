@@ -1,5 +1,5 @@
 # twitter-cabinet
-Processing and visualizing the 2016 candidates' Twitter followings
+Processing and visualizing the 2016 presidential candidates' Twitter followings
 
 ## Goal
 We set out to survey the Twitter followers of each of the top four candidates to answer the question “What would the policies look like if each candidate replaced his/her presidential cabinet with his/her Twitter followers?”
@@ -7,6 +7,8 @@ We set out to survey the Twitter followers of each of the top four candidates to
 ### Usage
 
 To mine data, checkout the [twitter-miner repo](https://github.com/SIRHAMY/twitter-miner).
+
+To setup the project yourself, clone the repo, start a localhost, and view. Compatible data is already stored in the `Data` directory, so it will work straight-out-of-the-box.
 
 To run topic classification and sentiment analysis:
 
